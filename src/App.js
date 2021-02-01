@@ -1,8 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario/Formulario';
 
 function App() {
+
+  // Definir categoria y noticias
+  const [categoria, setCategoria] = useState('');
+
   return (
     <Fragment>
       <Header
@@ -10,7 +14,7 @@ function App() {
       />
 
       <div className="container withe">
-        <Formulario/>
+        <Formulario setCategoria={setCategoria}/>
       </div>
     </Fragment>
   );
