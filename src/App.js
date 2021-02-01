@@ -1,10 +1,11 @@
-import React, { Fragment, useState, useEffect } from 'react';
-import Header from './components/Header';
-import Formulario from './components/Formulario/Formulario';
+import React, { Fragment, useState, useEffect } from "react";
+import Header from "./components/Header";
+import Formulario from "./components/Formulario/Formulario";
+import ListadoNoticias from "./components/ListadoNoticias";
 
 function App() {
   // Definir categoria y noticias
-  const [categoria, setCategoria] = useState('');
+  const [categoria, setCategoria] = useState("");
   const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
@@ -21,10 +22,11 @@ function App() {
 
   return (
     <Fragment>
-      <Header titulo='Buscador de Noticias' />
+      <Header titulo="Buscador de Noticias" />
 
-      <div className='container withe'>
+      <div className="container withe">
         <Formulario setCategoria={setCategoria} />
+        <ListadoNoticias noticias={noticias} />
       </div>
     </Fragment>
   );
