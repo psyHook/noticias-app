@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import Header from './components/Header';
+import Formulario from './components/Formulario/Formulario';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       />
 
       <div className="container withe">
-        <h1>Formulario</h1>
+        <Formulario/>
       </div>
     </Fragment>
   );
