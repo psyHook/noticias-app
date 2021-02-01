@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../Formulario/Formulario.module.css';
 import useSelect from '../../Hooks/useSelect';
+import PropTypes from 'prop-types'
 
 const Formulario = ({ setCategoria }) => {
   const OPCIONES = [
@@ -16,18 +17,16 @@ const Formulario = ({ setCategoria }) => {
   const [categoria, SelectNoticias] = useSelect('general', OPCIONES);
 
   // Submit al form, pasar categoria a app.js
-  const buscarNoticias = e => {
+  const buscarNoticias = (e) => {
     e.preventDefault();
 
-    setCategoria(categoria)
-  }
+    setCategoria(categoria);
+  };
 
   return (
     <div className={`${styles.buscador} row`}>
       <div className='col s12 m8 offset-m2'>
-        <form
-          onSubmit={buscarNoticias}
-        >
+        <form onSubmit={buscarNoticias}>
           <h2 className={styles.heading}>Encuentra Noticias por Categoría</h2>
 
           <SelectNoticias />
@@ -44,5 +43,10 @@ const Formulario = ({ setCategoria }) => {
     </div>
   );
 };
+
+
+Formulario.propTypes = {
+  setCategoria: PropTypes.func.isRequired
+}
 
 export default Formulario;
